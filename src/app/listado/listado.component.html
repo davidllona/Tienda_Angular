@@ -1,0 +1,30 @@
+ <form action="#">
+          <input type="search" [(ngModel)]="busqueda" name="busqueda" placeholder="Introduce el nombre de la zapatilla"  class="search-data" path="test"  required/>
+ </form> 
+
+
+
+
+<h2 class="font-weight-bold mb-2">Nuestros productos</h2>
+<div class="container" style="gap: 3rem;">
+	<div *ngFor="let elemento of zapatilla | search:busqueda" >
+		<div class="card">
+			<div class="card-image">
+				<div *ngIf="elemento.descuento > 0">
+				<div class="product-descuento">
+					<span class="perc">{{elemento.descuento}} %</span>
+				</div>
+				</div>
+				<a (click)="verDetalles(elemento)" class="enlace_detalles">
+					<img width="100" height="300" src="server/imagenes/{{elemento.id}}.jpg" alt="No hay imagen">
+				</a>
+			</div>
+			<div class="card-content">
+				<h3>{{elemento.nombre}}</h3>
+			</div >
+			<span class="original_price"></span>
+			<span class="price">MVP: <span class="price_number">{{elemento.precio_original}} €</span></span>
+
+		</div>
+	</div>
+</div>

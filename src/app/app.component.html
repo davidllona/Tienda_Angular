@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Graduate">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+  <title>Basket Shop</title>
+</head>
+
+<body>
+
+
+  <nav>
+    <div class="logo" id="inicio">
+      Basket Shop
+    </div>
+    <div class="search-icon">
+      <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+      <span class="fas fa-times"></span>
+    </div>
+    <div class="conteiner_profile">
+      <div class="half">
+        <label for="profile2" class="profile-dropdown">
+          <input type="checkbox" id="profile2">
+          <img src="https://cdn0.iconfinder.com/data/icons/avatars-3/512/avatar_hipster_guy-512.png">
+          <label for="profile2"><i class="mdi mdi-menu"></i></label>
+          <ul>
+            <li><a href="./admin/"><i class="mdi mdi-settings"></i>IR A ADMINISTRACIÓN</a></li>
+            <li><a href="#" routerLink="/favorito"><i class="mdi mdi-settings"></i>Favorito</a></li>
+            <li><a href="#" routerLink="/carrito"><i class="mdi mdi-email-outline"></i>Carrito</a></li>
+            <li><a href="#" routerLink="/listado"><i class="mdi mdi-email-outline"></i>Productos</a></li>
+          </ul>
+        </label>
+      </div>
+    </div>
+  </nav>
+  <div class="contenedor">
+    <router-outlet></router-outlet>
+  </div>
+  <script type="text/javascript">
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const form = document.querySelector("form");
+    searchBtn.onclick = () => {
+      form.classList.add("active");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+    cancelBtn.onclick = () => {
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    }
+  </script>
+</body>
+
+</html>

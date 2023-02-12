@@ -1,0 +1,39 @@
+<h2 class="font-weight-bold mb-2">Productos del carrito</h2>
+<div class="container">
+<div *ngFor="let pc of zapatillasCarrito; let i = index">
+<div class="card">
+	<div class="card-image">
+		<a href="#" class="enlace_detalles">
+                <img style="height: 290px; width: 261px;"  src="server/imagenes/{{pc.zapatilla.id}}.jpg" alt="No hay imagen" />
+		</a>
+	</div>
+	<div class="card-content">
+		<h3>{{pc.zapatilla.nombre}}</h3>
+	</div>
+    <ul id="ul_carrito">
+        
+        <li>Precio Original: {{pc.zapatilla.precio_original}} &euro;</li>
+        <li>Calificación: {{pc.zapatilla.calificacion}}/10</li>
+        <li>Descuento: <span> {{pc.zapatilla.descuento}} %;</span></li>
+        <div *ngIf="pc.zapatilla.descuento > 0">
+        <li>Precio Rebajado: <span>{{calcularPrecioRebajado(pc.zapatilla.precio_original, pc.zapatilla.descuento)}} € </span></li>
+        </div>
+        <li>Cantidad: {{pc.cantidad}}</li>
+        <!-- <button (click)="borrarProductoCarrito(i)">Borrar producto carrito</button> -->
+        <a href="#" class="enlace_borrar_producto" (click)="vaciarCarrito()">Vaciar carrito</a>
+
+    </ul>
+
+</div>
+</div>
+
+</div>
+<div style="text-align: center; margin: 30px;">
+    <a href="#" routerLink="/pedido">REALIZAR PEDIDO</a>
+</div>
+
+
+
+
+
+

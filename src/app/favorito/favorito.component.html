@@ -1,0 +1,29 @@
+<h2 class="font-weight-bold mb-2">Productos de tu lista de favoritos</h2>
+<div class="container">
+<div *ngFor="let pf of zapatillasFavorito">
+<div class="card">
+	<div class="card-image">
+		<a href="#" class="enlace_detalles">
+                <img style="height: 290px; width: 261px;"  src="server/imagenes/{{pf.zapatilla.id}}.jpg" alt="No hay imagen" />
+		</a>
+	</div>
+	<div class="card-content">
+		<h3>{{pf.zapatilla.nombre}}</h3>
+	</div>
+    <ul id="ul_carrito">
+        <li>Precio Original: {{pf.zapatilla.precio_original}} &euro;</li>
+        <li>Calificación: {{pf.zapatilla.calificacion}}</li>
+        <li>Descuento: <span> {{pf.zapatilla.descuento}} %;</span></li>
+        <div *ngIf="pf.zapatilla.descuento > 0">
+            <li>Precio Rebajado: <span>{{calcularPrecioRebajado(pf.zapatilla.precio_original, pf.zapatilla.descuento)}} € </span></li>
+        </div>
+        <a href="#" class="enlace_borrar_producto" (click)="vaciarFavorito()">Borrar producto</a>
+
+    </ul>
+
+</div>
+</div>
+
+</div>
+
+

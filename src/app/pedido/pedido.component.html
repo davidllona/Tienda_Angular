@@ -1,0 +1,75 @@
+<!-- <div>
+    Rellena los datos de tu pedido <br>
+    Nombre: <input type="text" [(ngModel)]="pedido.nombre"/><span [hidden]="nombreOk" style="color: red;">Error en el nombre</span> <br>
+    Apellido: <input type="text" [(ngModel)]="pedido.apellido"/><span [hidden]="apellidoOk" style="color: red">Error en el apellido</span><br>
+    Direccion de envio: <input type="text"  [(ngModel)]="pedido.direccion"/><span [hidden]="direccionOk" style="color: red">Error en la direccion</span><br>
+    Provincia: <input type="text" [(ngModel)]="pedido.provincia"/><span [hidden]="provinciaOk" style="color: red">Error en la provincia</span><br>
+    Telefono: <input type="text" [(ngModel)]="pedido.telefono"/><span [hidden]="telefonoOk" style="color: red">Error en el telefono</span> <br>
+    Email: <input type="text" [(ngModel)]="pedido.email"/><span [hidden]="emailOk" style="color: red">Error en el email</span><br>
+    Número de tarjeta de credito(no insertar valores reales) <input type="text" [(ngModel)]="pedido.tarjeta"><span [hidden]="tarjetaOk" style="color: red">Error en el numero de la tarjeta</span> <br>
+    Observaciones: <textarea  rows="5" cols="40" placeholder="Escribe tus observaciones aqui" [(ngModel)]="pedido.observaciones"></textarea><br>
+    
+    <button (click)="finalizarpedido()">FINALIZAR PEDIDO</button>
+
+
+</div> -->
+
+
+
+<div class="contact_form">
+
+    <div class="formulario">      
+      <h1>Rellena los datos de tu pedido</h1>
+                <p>
+                  <label for="nombre" class="colocar_nombre">Nombre
+                    <span class="obligatorio">*</span>
+                  </label>
+                  <input type="text" [(ngModel)]="pedido.nombre" required="obligatorio" placeholder="Escribe tu nombre"/><span [hidden]="nombreOk" style="color: red;">Error en el nombre</span> <br>
+                </p>
+                <p>
+                  <label for="edad" class="colocar_edad">Apellido
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" [(ngModel)]="pedido.apellido" required="obligatorio" placeholder="Escribe tu apellido"/><span [hidden]="apellidoOk" style="color: red">Error en el apellido</span><br>
+                </p>
+                <p>
+                  <label for="direccion" class="colocar_direccion">Direccion de envio
+                  </label>
+                  <input type="text"  [(ngModel)]="pedido.direccion" placeholder="Escribe tu direccion"/><span [hidden]="direccionOk" style="color: red">Error en la direccion</span><br>
+                </p>    
+                <p>
+                  <label for="provincia" class="colocar_provincia">Provincia
+                  </label>
+                  <input type="text" [(ngModel)]="pedido.provincia" placeholder="Escribe tu provincia"/><span [hidden]="provinciaOk" style="color: red">Error en la provincia</span><br>
+                </p>    
+                <p>
+                  <label for="asunto" class="colocar_asunto">Teléfono
+                    <span class="obligatorio">*</span>
+                  </label>
+                  <input type="text" [(ngModel)]="pedido.telefono" placeholder="Escribe tu teléfono"/><span [hidden]="telefonoOk" style="color: red">Error en el telefono</span> <br>
+                </p> 
+                
+                  <p>
+                    <label for="asunto" class="colocar_asunto">Email
+                      <span class="obligatorio">*</span>
+                    </label>
+                    <input type="text" [(ngModel)]="pedido.email" placeholder="Escribe tu email"/><span [hidden]="emailOk" style="color: red">Error en el email</span><br>
+                  </p> 
+                  <p>
+                    <label for="asunto" class="colocar_asunto">Número de tarjeta de credito(no insertar valores reales) 
+                      <span class="obligatorio">*</span>
+                    </label>
+                    <input type="text" [(ngModel)]="pedido.tarjeta" placeholder="Escribe tu numero de tarjeta de credito"><span [hidden]="tarjetaOk" style="color: red">Error en el numero de la tarjeta</span> <br>
+                  </p>    
+                  <p>
+                    <label for="mensaje" class="colocar_mensaje">Observaciones
+                        <span class="obligatorio">*</span>
+                    </label>                     
+                    <textarea  rows="5" cols="40" placeholder="Escribe tus observaciones aqui" [(ngModel)]="pedido.observaciones"></textarea><br>
+                </p>                  
+                <button type="submit" (click)="finalizarpedido()">FINALIZAR PEDIDO</button>
+                <p class="aviso">
+                  <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>          
+    </div>  
+  </div>

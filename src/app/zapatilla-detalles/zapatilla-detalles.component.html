@@ -1,0 +1,85 @@
+<!-- <br><br>
+<div>detalles del producto:</div>
+<img height="120px" src="/server/imagenes/{{zapatilla.id}}.jpg">
+<div>
+    Nombre: {{zapatilla.nombre}} <br>
+    Descripcion: {{zapatilla.descripcion}} <br>
+    Precio: {{zapatilla.precio_original}} € <br>
+    Stock: {{zapatilla.stock}} <br>
+    Calificacion: {{zapatilla.calificacion}} <br>
+    <button (click)="agregar_producto_al_carrito()" >AGREGAR AL CARRITO</button>
+    Cantidad <input type="number" [(ngModel)]="cantidad" min="1"/>
+
+</div> -->
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---Boxicons CDN Setup for icons-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container_details">
+        <div class="single-product">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-image">
+                        <div class="product-image-main">
+                            <img src="/server/imagenes/{{zapatilla.id}}.jpg" alt="" id="product-main-image">
+                        </div>
+                        <div class="product-image-slider">
+                            <img src="/server/imagenes/{{zapatilla.id}}.2.jpg" alt=""  class="image-list">
+                            <img src="/server/imagenes/{{zapatilla.id}}.3.jpg" alt=""  class="image-list">
+                            <img src="/server/imagenes/{{zapatilla.id}}.4.jpg" alt=""  class="image-list">
+                            <img src="/server/imagenes/{{zapatilla.id}}.5.jpg" alt=""  class="image-list">
+                            <img src="/server/imagenes/{{zapatilla.id}}.jpg" alt=""  class="image-list">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product">
+                        <div class="product-title">
+                            <h2>{{zapatilla.nombre}}</h2>
+                        </div>
+                        <div class="product-rating">
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span class="review">(27 Reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <div *ngIf="zapatilla.descuento > 0">
+                            <span id="sp-precio-con-descuento" class="sale-price">{{zapatilla.precio_original}} &euro;</span>
+                            </div>
+                            <span id="sp-precio" class="offer-price">{{calcularPrecioRebajado(zapatilla.precio_original, zapatilla.descuento)}}  &euro;</span>       
+                        </div>
+
+                        <div class="product-details">
+                            <h3>Descripción</h3>
+                            <p>{{zapatilla.descripcion}}</p>
+                        </div>
+                        Cantidad: <input type="number" [(ngModel)]="cantidad" min="1"/>
+                        <span class="divider"></span>
+
+                        <div class="product-btn-group">
+                            
+                            <div class="button buy-now" (click)="agregar_producto_al_carrito()"  role="button"><i class='bx bxs-zap'></i> Comprar ahora</div>
+                            <div class="button add-cart" (click)="agregar_producto_al_carrito()"><i class='bx bxs-cart' ></i> Añadir a carrito</div>
+                            <div class="button heart" (click)="agregar_producto_a_favoritos()"><i class='bx bxs-heart' ></i> Añadir a favoritos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

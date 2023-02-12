@@ -1,0 +1,1 @@
+export declare const cargar_js_miniaturas:any;
